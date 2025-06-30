@@ -82,7 +82,7 @@ class _MyAlbumState extends State<MyAlbum> {
                   child: Icon(Icons.person),
                 ),
                 Text(
-                  "Faizan",
+                  "Asghar",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 Padding(
