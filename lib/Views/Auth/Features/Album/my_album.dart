@@ -205,19 +205,7 @@ class _MyAlbumState extends State<MyAlbum> {
     ];
     return FocusedMenuHolder(
       menuItems: [],
-      // menuWidth: MediaQuery.of(context).size.width * 0.50,
-      // blurSize: 2.0,
-      // menuItemExtent: 45,
-      // menuBoxDecoration: const BoxDecoration(
-      //   color: Colors.black,
-      //   borderRadius: BorderRadius.all(Radius.circular(15.0)),
-      // ),
-      // duration: const Duration(milliseconds: 100),
-      // animateMenuItems: true,
-      // blurBackgroundColor: Colors.black54,
-      // menuOffset: 10.0,
-      // bottomOffsetHeight: 80.0,
-      // menuItems: [],
+     
       onPressed: () {
         Navigator.push(
           context,
