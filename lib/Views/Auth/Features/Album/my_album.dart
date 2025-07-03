@@ -2,6 +2,7 @@ import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:focused_menu/focused_menu.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_flutter_tyamo/Views/Auth/Features/Album/album_post.dart';
 import 'package:staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class MyAlbum extends StatefulWidget {
@@ -20,17 +21,20 @@ class _MyAlbumState extends State<MyAlbum> {
           children: [
             _buildTopSection(context),
             Padding(
-              padding: const EdgeInsets.all(12.0),
+              padding: EdgeInsets.all(12),
               child: StaggeredGridView.countBuilder(
-                physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                crossAxisCount: 4,
-                itemCount: 9,
-                itemBuilder: (context, index) => _buildGridItem(context, index),
-                staggeredTileBuilder: (index) =>
-                    StaggeredTile.count(2, index.isEven ? 2 : 3),
+                physics: NeverScrollableScrollPhysics(),
                 crossAxisSpacing: 12,
                 mainAxisSpacing: 15,
+                crossAxisCount: 4,
+                staggeredTileBuilder: (index) {
+                  return StaggeredTile.count(2, index.isEven ? 2 : 3);
+                },
+                itemBuilder: (context, index) {
+                  return _buildGridItem(context, index);
+                },
+                itemCount: 9,
               ),
             ),
           ],
@@ -127,8 +131,6 @@ class _MyAlbumState extends State<MyAlbum> {
                   ),
                   label: "Photos",
                   value: "0",
-
-
                 ),
               ],
             ),
@@ -202,33 +204,28 @@ class _MyAlbumState extends State<MyAlbum> {
       "images/office2.jpg",
     ];
     return FocusedMenuHolder(
-      menuWidth: MediaQuery.of(context).size.width * 0.50,
-      blurSize: 2.0,
-      menuItemExtent: 45,
-      menuBoxDecoration: const BoxDecoration(
-        color: Colors.black,
-        borderRadius: BorderRadius.all(Radius.circular(15.0)),
-      ),
-      duration: const Duration(milliseconds: 100),
-      animateMenuItems: true,
-      blurBackgroundColor: Colors.black54,
-      menuOffset: 10.0,
-      bottomOffsetHeight: 80.0,
-      menuItems: [
-        // FocusedMenuItem(
-        //   title: const Text("Open"),
-        //   trailingIcon: const Icon(Icons.open_in_new),
-        //   onPressed: () {},
-        // ),
-        // FocusedMenuItem(
-        //   title: const Text(
-        //     "Delete",
-        //     style: TextStyle(color: Colors.white, fontFamily: "Nunito"),
-        //   ),
-        //   onPressed: () {},
-        // ),
-      ],
-      onPressed: () {},
+      menuItems: [],
+      // menuWidth: MediaQuery.of(context).size.width * 0.50,
+      // blurSize: 2.0,
+      // menuItemExtent: 45,
+      // menuBoxDecoration: const BoxDecoration(
+      //   color: Colors.black,
+      //   borderRadius: BorderRadius.all(Radius.circular(15.0)),
+      // ),
+      // duration: const Duration(milliseconds: 100),
+      // animateMenuItems: true,
+      // blurBackgroundColor: Colors.black54,
+      // menuOffset: 10.0,
+      // bottomOffsetHeight: 80.0,
+      // menuItems: [],
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => AlbumPost(imageUrl: imagesList[index]),
+          ),
+        );
+      },
       child: Card(
         child: SizedBox(
           child: ClipRRect(

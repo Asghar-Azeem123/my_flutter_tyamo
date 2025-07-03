@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:my_flutter_tyamo/Views/Auth/Features/Album/album_post.dart';
 import 'package:my_flutter_tyamo/Views/Auth/Features/Album/my_album.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         textTheme: GoogleFonts.poppinsTextTheme(),
         // Optionally set overall brightness or colors here
       ),
-      home: const MyAlbum(),
+      // home: AlbumPost(),
+      home: MyAlbum(),
     );
   }
 }

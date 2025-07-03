@@ -44,6 +44,8 @@ dependencies:
   getwidget: 
   staggered_grid_view:
   focused_menu:
+  flutter_balloon_slider:
+ 
 
 dev_dependencies:
   flutter_test:
